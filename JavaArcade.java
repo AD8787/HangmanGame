@@ -62,12 +62,12 @@ public class JavaArcade {
 
             if (secretWord.contains(userGuess)) {
                 System.out.println("The letter " + userGuess + " is in the word");
-                System.out.println("You have " + attemptsLeft + " attempts left."); //displays # of attempts left
+                System.out.println("You have " + (attemptsLeft - 1) + " attempts left."); //displays # of attempts left
                 checkGuess(userGuess); //shows the correct letter in the word by calling the checkGuess() method and removing the "_"
             } 
             else {
                 System.out.println("The letter " + userGuess + " is not in the word");
-                System.out.println("You have " + attemptsLeft + " attempts left."); 
+                System.out.println("You have " + (attemptsLeft - 1) + " attempts left."); 
                 attemptsLeft--; //subtracts attempts left by 1 if the guess is wrong
             }
 
@@ -79,7 +79,8 @@ public class JavaArcade {
         }
 
         //if player runs out of attempts before they guess the word, it shows the correct word and ends the game
-        if (attemptsLeft == 0) { 
+        if (attemptsLeft == 0) {
+            displayOutline(0);
             System.out.println("You lost, the word was: " + secretWord);
         }
 
@@ -130,7 +131,7 @@ public class JavaArcade {
         +---+
         |   |
         O   |
-       /|\\ |
+       /|\\  |
             |
             |
         """);
@@ -140,7 +141,7 @@ public class JavaArcade {
         +---+
         |   |
         O   |
-       /|\\ |
+       /|\\  |
         |   |
         |   |
         """);
@@ -150,7 +151,7 @@ public class JavaArcade {
         +---+
         |   |
         O   |
-       /|\\ |
+       /|\\  |
         |   |
         |   |
        /    |
@@ -161,10 +162,10 @@ public class JavaArcade {
         +---+
         |   |
         O   |
-       /|\\ |
+       /|\\  |
         |   |
         |   |
-       / \\ |
+       / \\  |
         """);
         }
     }
